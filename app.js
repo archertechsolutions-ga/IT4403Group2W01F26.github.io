@@ -11,7 +11,7 @@
 
   const STORAGE_KEY = "curtaincall_user";
   const LOCAL_API_URL = "http://127.0.0.1:8000";
-  const PRODUCTION_API_URL = "https://YOUR-BACKEND-HOST.onrender.com";
+  const PRODUCTION_API_URL = "https://curtaincall-api.onrender.com";
 
   const DEPARTMENTS = [
     "Special Effects",
