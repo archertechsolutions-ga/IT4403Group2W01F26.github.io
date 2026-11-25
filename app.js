@@ -10,7 +10,6 @@
   // =========================================
 
   const STORAGE_KEY = "curtaincall_user";
-  const LOCAL_API_URL = "http://127.0.0.1:8000";
   const PRODUCTION_API_URL = "https://curtaincall-api.onrender.com";
 
   const DEPARTMENTS = [
@@ -27,8 +26,7 @@
 
   function getApiBaseUrl() {
     if (global.CURTAINCALL_API_URL) return global.CURTAINCALL_API_URL.replace(/\/+$/, "");
-    const host = global.location && global.location.hostname;
-    return !host || host === "localhost" || host === "127.0.0.1" ? LOCAL_API_URL : PRODUCTION_API_URL;
+    return PRODUCTION_API_URL;
   }
 
   async function apiRequest(path, options = {}) {
@@ -105,11 +103,7 @@
       return field ? `${field.replace(/_/g, " ")}: ${first.msg}` : first.msg;
     }
     if (err.message === "Failed to fetch" || err instanceof TypeError) {
-      const host = global.location && global.location.hostname;
-      const isLocal = !host || host === "localhost" || host === "127.0.0.1";
-      return isLocal
-        ? `Unable to reach the Curtain Call API (${getApiBaseUrl()}). Make sure uvicorn is running.`
-        : `Unable to reach the Curtain Call API (${getApiBaseUrl()}). The server may be waking up—please wait a few seconds and try again.`;
+      return `Unable to reach the Curtain Call API (${getApiBaseUrl()}). The server may be waking up—please wait a few seconds and try again.`;
     }
     return err.message || "Request failed. Please try again.";
   }
