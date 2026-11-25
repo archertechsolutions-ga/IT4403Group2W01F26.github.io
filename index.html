@@ -1,11 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Empty Page</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curtain Call</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Font for UI icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+  <div class="page-wrapper">
+    <header class="site-header">
+      <div class="title-row">
+        <span class="gold-line fade-left"></span>
+        <h1 class="site-title">CURTAIN CALL</h1>
+        <span class="gold-line fade-right"></span>
+      </div>
+      <div class="emblem-row">
+        <span class="gold-line short fade-left"></span>
+        <i class="fa-solid fa-masks-theater emblem-icon" aria-hidden="true"></i>
+        <span class="gold-line short fade-right"></span>
+      </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="main-nav" aria-label="Primary Navigation">
+      <ul class="nav-list">
+        <li>
+          <a href="#home" class="nav-link active" data-view="home">
+            <i class="fa-solid fa-house"></i> Home
+          </a>
+        </li>
+        <li>
+          <a href="#browse" class="nav-link" data-view="browse">
+            <i class="fa-solid fa-clapperboard"></i> Browse
+          </a>
+        </li>
+        <li>
+          <a href="#profile" class="nav-link" data-view="profile">
+            <i class="fa-solid fa-user"></i> Profile
+          </a>
+        </li>
+        <li>
+          <a href="#reviews" class="nav-link" data-view="reviews">
+            <i class="fa-solid fa-star"></i> Reviews
+          </a>
+        </li>
+        <li>
+          <a href="#settings" class="nav-link" data-view="settings">
+            <i class="fa-solid fa-gear"></i> Settings
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Main Content Panel -->
+    <main id="app-content" class="content-panel">
+      <section class="recommendations-section">
+        <div class="section-header">
+          <h2 class="section-title">Recommended Movies</h2>
+          <span class="header-divider"></span>
+        </div>
+
+        <div class="movie-list">
+          <!-- Movie Card 1 -->
+          <article class="movie-card">
+            <div class="movie-poster">
+              <img src="https://placehold.co/480x270/1a1410/e5b85c?text=Dune+(2021)" alt="Dune (2021) backdrop">
+            </div>
+            <div class="movie-info">
+              <h3 class="movie-title">Dune (2021)</h3>
+              <p class="movie-reason">
+                You liked the Special Effect, Make Up, and Costume Designer. You might also like this genre.
+              </p>
+            </div>
+            <div class="movie-action">
+              <button class="btn-details" type="button">
+                View Details <i class="fa-solid fa-chevron-right"></i>
+              </button>
+            </div>
+          </article>
+
+          <hr class="card-divider">
+
+          <!-- Movie Card 2 -->
+          <article class="movie-card">
+            <div class="movie-poster">
+              <img src="https://placehold.co/480x270/0a1026/e5b85c?text=Star+Wars+(1977)" alt="Star Wars (1977) backdrop">
+            </div>
+            <div class="movie-info">
+              <h3 class="movie-title">Star Wars (1977)</h3>
+              <p class="movie-reason">
+                You liked the Special Effect, Make Up, and Costume Designer. You might also like this genre.
+              </p>
+            </div>
+            <div class="movie-action">
+              <button class="btn-details" type="button">
+                View Details <i class="fa-solid fa-chevron-right"></i>
+              </button>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer Emblem -->
+    <footer class="site-footer">
+      <span class="gold-line footer-line fade-left"></span>
+      <i class="fa-solid fa-compact-disc footer-icon" aria-hidden="true"></i>
+      <span class="gold-line footer-line fade-right"></span>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
 </body>
 </html>
