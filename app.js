@@ -105,7 +105,11 @@
       return field ? `${field.replace(/_/g, " ")}: ${first.msg}` : first.msg;
     }
     if (err.message === "Failed to fetch" || err instanceof TypeError) {
-      return `Unable to reach the Curtain Call API (${getApiBaseUrl()}). Make sure uvicorn is running.`;
+      const host = global.location && global.location.hostname;
+      const isLocal = !host || host === "localhost" || host === "127.0.0.1";
+      return isLocal
+        ? `Unable to reach the Curtain Call API (${getApiBaseUrl()}). Make sure uvicorn is running.`
+        : `Unable to reach the Curtain Call API (${getApiBaseUrl()}). The server may be waking up—please wait a few seconds and try again.`;
     }
     return err.message || "Request failed. Please try again.";
   }

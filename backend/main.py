@@ -444,7 +444,7 @@ _cors_origins = [
     o.strip()
     for o in os.getenv(
         "CORS_ORIGINS",
-        "http://localhost:5500,http://127.0.0.1:5500,http://localhost:8000,http://127.0.0.1:8000",
+        "https://archertechsolutions-ga.github.io,http://localhost:5500,http://127.0.0.1:5500,http://localhost:8000,http://127.0.0.1:8000",
     ).split(",")
     if o.strip()
 ]
@@ -612,6 +612,9 @@ def get_user_stats(user_id: str):
         favorite_departments=user_doc.get("favorite_departments", []),
     )
 
+# =========================================
+# Recommendations & Weights
+# =========================================
 
 @app.post("/api/users/{user_id}/dismiss", response_model=UserResponse, tags=["Users"])
 def dismiss_movie(user_id: str, payload: DismissMovieRequest):
